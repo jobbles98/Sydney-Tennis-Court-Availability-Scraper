@@ -41,7 +41,10 @@ const AvailabilityTable = ({ data, locationId, locationUrl }) => {
                       '-' +
                       (d.getMonth() + 1).toString().padStart(2, '0') +
                       '-' +
-                      date.slice(-2)
+                      (parseInt(date.trim().split(" ").pop(), 10) < 10
+                      ? "0" + parseInt(date.trim().split(" ").pop(), 10)
+                      : date.slice(-2)
+                      )
                     } 
                     target="_blank" 
                     rel="noopener noreferrer" 
